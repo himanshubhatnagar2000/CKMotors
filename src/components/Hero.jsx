@@ -1,5 +1,6 @@
 import React from 'react';
 import { ArrowRight, ShieldCheck, Sparkles, Award } from 'lucide-react';
+import HERO from "../assets/hero.jpg"
 
 export default function Hero({ onOpenInquiry }) {
   return (
@@ -21,15 +22,15 @@ export default function Hero({ onOpenInquiry }) {
           </p>
 
           <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto mb-12">
-            <button 
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-md font-bold text-base bg-tata-blue text-white hover:bg-tata-navy transition-all duration-300 shadow-lg hover:shadow-tata-blue/20 hover:-translate-y-0.5 cursor-pointer" 
+            <button
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-md font-bold text-base bg-tata-blue text-white hover:bg-tata-navy transition-all duration-300 shadow-lg hover:shadow-tata-blue/20 hover:-translate-y-0.5 cursor-pointer"
               onClick={() => onOpenInquiry()}
             >
               <span>Book a Test Drive</span>
               <ArrowRight size={18} />
             </button>
-            <a 
-              href="#products" 
+            <a
+              href="#products"
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-md font-bold text-base border border-tata-blue text-tata-blue hover:bg-tata-blue/5 transition-all duration-300 hover:-translate-y-0.5"
             >
               Explore Models
@@ -61,15 +62,15 @@ export default function Hero({ onOpenInquiry }) {
         <div className="relative flex justify-center animate-fade-in-up delay-200">
           <div className="relative w-full max-w-[520px]">
             <div className="absolute w-[350px] h-[350px] bg-tata-blue/5 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full blur-[40px] -z-10"></div>
-            <img 
-              src="/images/tata_hero.png" 
-              alt="Tata Curvv EV Showroom Showcase" 
+            <img
+              src={HERO}
+              alt="ACE PRO EV Showroom Showcase"
               className="w-full h-auto drop-shadow-[0_15px_30px_rgba(13,51,136,0.15)] rounded-[20px] object-cover"
             />
             <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 lg:left-10 lg:translate-x-0 p-4 px-6 rounded-lg bg-white border border-slate-200 shadow-lg">
               <span className="text-[10px] font-bold text-tata-blue tracking-widest block mb-1">FLAGSHIP LAUNCH</span>
-              <h3 className="text-lg font-extrabold text-slate-900 mb-0.5">TATA CURVV</h3>
-              <p className="text-xs text-slate-500">Starting from ₹ 9.99 Lakh*</p>
+              <h3 className="text-lg font-extrabold text-slate-900 mb-0.5">ACE PRO EV</h3>
+              <p className="text-xs text-slate-500">Starting from ₹6.50 Lakh*</p>
             </div>
           </div>
         </div>
