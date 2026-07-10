@@ -14,6 +14,10 @@ function App() {
   const [selectedCar, setSelectedCar] = useState('');
   const location = useLocation();
 
+  useEffect(() => {
+    document.title = 'CK Motors – Authorized TATA Motors Dealer';
+  }, []);
+
   // Scroll to the section matching the URL hash when navigating from another page
   useEffect(() => {
     if (location.hash) {
