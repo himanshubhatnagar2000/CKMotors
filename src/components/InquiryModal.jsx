@@ -54,9 +54,9 @@ export default function InquiryModal({ isOpen, onClose, preselectedCar }) {
   return (
     <div className="fixed inset-0 z-[2000] flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm overflow-y-auto">
       <div className="relative w-full max-w-[650px] bg-white border border-slate-200 rounded-xl p-8 md:p-10 shadow-2xl animate-fade-in-up text-left" role="dialog" aria-modal="true">
-        <button 
-          className="absolute top-6 right-6 bg-slate-100 border border-slate-200 hover:bg-slate-200 hover:text-slate-900 transition-colors text-slate-500 w-9 h-9 rounded-full flex items-center justify-center cursor-pointer" 
-          onClick={onClose} 
+        <button
+          className="absolute top-6 right-6 bg-slate-100 border border-slate-200 hover:bg-slate-200 hover:text-slate-900 transition-colors text-slate-500 w-9 h-9 rounded-full flex items-center justify-center cursor-pointer"
+          onClick={onClose}
           aria-label="Close modal"
         >
           <X size={20} />
@@ -71,20 +71,20 @@ export default function InquiryModal({ isOpen, onClose, preselectedCar }) {
               </span>
               <h2 className="text-2xl md:text-3xl font-extrabold text-tata-navy mb-2">Schedule / Enquire</h2>
               <p className="text-sm text-slate-500">
-                Fill in the details below. A CK Motors advisor will contact you within 2 hours to confirm your schedule.
+                Fill in the details below. A CK Motors advisor will contact you within 24 hours to confirm your schedule.
               </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
               <div className="flex flex-col gap-1.5">
                 <label htmlFor="modal-name" className="text-xs font-semibold text-slate-500">Full Name *</label>
-                <input 
-                  type="text" 
-                  id="modal-name" 
-                  name="name" 
-                  value={formData.name} 
-                  onChange={handleChange} 
-                  required 
+                <input
+                  type="text"
+                  id="modal-name"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
                   placeholder="Enter your full name"
                   className="bg-white border border-slate-200 rounded p-2.5 px-3.5 text-slate-900 text-sm outline-none transition duration-300 focus:border-tata-blue focus:ring-3 focus:ring-tata-blue/10"
                 />
@@ -92,15 +92,15 @@ export default function InquiryModal({ isOpen, onClose, preselectedCar }) {
 
               <div className="flex flex-col gap-1.5">
                 <label htmlFor="modal-phone" className="text-xs font-semibold text-slate-500">Phone Number *</label>
-                <input 
-                  type="tel" 
-                  id="modal-phone" 
-                  name="phone" 
+                <input
+                  type="tel"
+                  id="modal-phone"
+                  name="phone"
                   pattern="[0-9]{10}"
                   title="Ten digit phone number"
-                  value={formData.phone} 
-                  onChange={handleChange} 
-                  required 
+                  value={formData.phone}
+                  onChange={handleChange}
+                  required
                   placeholder="e.g. 8484932191"
                   className="bg-white border border-slate-200 rounded p-2.5 px-3.5 text-slate-900 text-sm outline-none transition duration-300 focus:border-tata-blue focus:ring-3 focus:ring-tata-blue/10"
                 />
@@ -108,12 +108,12 @@ export default function InquiryModal({ isOpen, onClose, preselectedCar }) {
 
               <div className="flex flex-col gap-1.5">
                 <label htmlFor="modal-email" className="text-xs font-semibold text-slate-500">Email Address</label>
-                <input 
-                  type="email" 
-                  id="modal-email" 
-                  name="email" 
-                  value={formData.email} 
-                  onChange={handleChange} 
+                <input
+                  type="email"
+                  id="modal-email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
                   placeholder="e.g. john@example.com"
                   className="bg-white border border-slate-200 rounded p-2.5 px-3.5 text-slate-900 text-sm outline-none transition duration-300 focus:border-tata-blue focus:ring-3 focus:ring-tata-blue/10"
                 />
@@ -121,10 +121,10 @@ export default function InquiryModal({ isOpen, onClose, preselectedCar }) {
 
               <div className="flex flex-col gap-1.5">
                 <label htmlFor="modal-model" className="text-xs font-semibold text-slate-500">Selected Tata Model</label>
-                <select 
-                  id="modal-model" 
-                  name="model" 
-                  value={formData.model} 
+                <select
+                  id="modal-model"
+                  name="model"
+                  value={formData.model}
                   onChange={handleChange}
                   className="bg-white border border-slate-200 rounded p-2.5 px-3.5 text-slate-900 text-sm outline-none transition duration-300 focus:border-tata-blue focus:ring-3 focus:ring-tata-blue/10"
                 >
@@ -136,10 +136,10 @@ export default function InquiryModal({ isOpen, onClose, preselectedCar }) {
 
               <div className="flex flex-col gap-1.5">
                 <label htmlFor="modal-type" className="text-xs font-semibold text-slate-500">Inquiry Type</label>
-                <select 
-                  id="modal-type" 
-                  name="type" 
-                  value={formData.type} 
+                <select
+                  id="modal-type"
+                  name="type"
+                  value={formData.type}
                   onChange={handleChange}
                   className="bg-white border border-slate-200 rounded p-2.5 px-3.5 text-slate-900 text-sm outline-none transition duration-300 focus:border-tata-blue focus:ring-3 focus:ring-tata-blue/10"
                 >
@@ -152,12 +152,12 @@ export default function InquiryModal({ isOpen, onClose, preselectedCar }) {
 
               <div className="flex flex-col gap-1.5">
                 <label htmlFor="modal-date" className="text-xs font-semibold text-slate-500">Preferred Date</label>
-                <input 
-                  type="date" 
-                  id="modal-date" 
-                  name="date" 
+                <input
+                  type="date"
+                  id="modal-date"
+                  name="date"
                   min={new Date().toISOString().split('T')[0]}
-                  value={formData.date} 
+                  value={formData.date}
                   onChange={handleChange}
                   className="bg-white border border-slate-200 rounded p-2.5 px-3.5 text-slate-900 text-sm outline-none transition duration-300 focus:border-tata-blue focus:ring-3 focus:ring-tata-blue/10"
                 />
@@ -165,11 +165,11 @@ export default function InquiryModal({ isOpen, onClose, preselectedCar }) {
 
               <div className="flex flex-col gap-1.5 md:col-span-2">
                 <label htmlFor="modal-notes" className="text-xs font-semibold text-slate-500">Additional Messages / Requirements</label>
-                <textarea 
-                  id="modal-notes" 
-                  name="notes" 
-                  value={formData.notes} 
-                  onChange={handleChange} 
+                <textarea
+                  id="modal-notes"
+                  name="notes"
+                  value={formData.notes}
+                  onChange={handleChange}
                   rows="3"
                   placeholder="Mention any custom specifications, variant preferences, or exchange queries..."
                   className="bg-white border border-slate-200 rounded p-2.5 px-3.5 text-slate-900 text-sm outline-none transition duration-300 focus:border-tata-blue focus:ring-3 focus:ring-tata-blue/10"
@@ -177,9 +177,9 @@ export default function InquiryModal({ isOpen, onClose, preselectedCar }) {
               </div>
             </div>
 
-            <button 
-              type="submit" 
-              className="w-full py-3.5 mt-2 bg-tata-blue text-white rounded font-bold text-sm hover:bg-tata-navy transition duration-300 shadow hover:shadow-tata-blue/15 cursor-pointer flex justify-center items-center gap-2" 
+            <button
+              type="submit"
+              className="w-full py-3.5 mt-2 bg-tata-blue text-white rounded font-bold text-sm hover:bg-tata-navy transition duration-300 shadow hover:shadow-tata-blue/15 cursor-pointer flex justify-center items-center gap-2"
               disabled={loading}
             >
               {loading ? (
@@ -211,8 +211,8 @@ export default function InquiryModal({ isOpen, onClose, preselectedCar }) {
             <p className="text-[11px] text-slate-400 mb-7 max-w-[420px]">
               An executive from CK Motors will call you shortly at the provided number to coordinate pricing, models availability, and test drive details.
             </p>
-            <button 
-              className="w-[200px] py-2.5 bg-tata-blue text-white rounded font-bold text-sm hover:bg-tata-navy transition cursor-pointer" 
+            <button
+              className="w-[200px] py-2.5 bg-tata-blue text-white rounded font-bold text-sm hover:bg-tata-navy transition cursor-pointer"
               onClick={onClose}
             >
               Back to Showroom
