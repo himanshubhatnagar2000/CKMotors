@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import Products from './components/Products';
@@ -11,6 +12,19 @@ import './App.css';
 function App() {
   const [isInquiryOpen, setIsInquiryOpen] = useState(false);
   const [selectedCar, setSelectedCar] = useState('');
+  const location = useLocation();
+
+  // Scroll to the section matching the URL hash when navigating from another page
+  useEffect(() => {
+    if (location.hash) {
+      const id = location.hash.replace('#', '');
+      // Slight delay lets the page render before scrolling
+      setTimeout(() => {
+        const el = document.getElementById(id);
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      }, 100);
+    }
+  }, [location.hash]);
 
   const openInquiry = (carName = '') => {
     setSelectedCar(carName);

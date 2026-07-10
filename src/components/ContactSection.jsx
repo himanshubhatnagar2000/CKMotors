@@ -104,16 +104,28 @@ export default function ContactSection() {
               <h3 className="text-lg font-bold text-tata-navy mb-5">Send a Direct Message</h3>
               {!submitted ? (
                 <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+                  <div className="flex flex-col gap-1.5">
+                    <label htmlFor="contact-name" className="text-xs font-semibold text-slate-500">Name *</label>
+                    <input
+                      type="text"
+                      id="contact-name"
+                      required
+                      value={formState.name}
+                      onChange={(e) => setFormState({ ...formState, name: e.target.value })}
+                      placeholder="John Doe"
+                      className="border border-slate-200 rounded-lg px-3.5 py-2.5 text-sm text-slate-800 outline-none transition focus:border-tata-blue focus:ring-2 focus:ring-tata-blue/10"
+                    />
+                  </div>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div className="flex flex-col gap-1.5">
-                      <label htmlFor="contact-name" className="text-xs font-semibold text-slate-500">Name *</label>
+                      <label htmlFor="contact-number" className="text-xs font-semibold text-slate-500">Phone Number *</label>
                       <input
                         type="text"
-                        id="contact-name"
+                        id="contact-number"
                         required
-                        value={formState.name}
-                        onChange={(e) => setFormState({ ...formState, name: e.target.value })}
-                        placeholder="John Doe"
+                        value={formState.number}
+                        onChange={(e) => setFormState({ ...formState, number: e.target.value })}
+                        placeholder="9999999999"
                         className="border border-slate-200 rounded-lg px-3.5 py-2.5 text-sm text-slate-800 outline-none transition focus:border-tata-blue focus:ring-2 focus:ring-tata-blue/10"
                       />
                     </div>

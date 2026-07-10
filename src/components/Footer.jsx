@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Send, Award, ShieldCheck, HelpCircle } from 'lucide-react';
 
 export default function Footer() {
@@ -16,22 +17,22 @@ export default function Footer() {
   const socialLinks = [
     {
       label: 'Facebook',
-      href: '#',
+      href: 'https://www.facebook.com/CKmotorsdealership/',
       icon: (
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
         </svg>
       ),
     },
-    {
-      label: 'Twitter',
-      href: '#',
-      icon: (
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z" />
-        </svg>
-      ),
-    },
+    // {
+    //   label: 'Twitter',
+    //   href: 'https://www.instagram.com/ckmotors_tatamotorsdealership/',
+    //   icon: (
+    //     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    //       <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z" />
+    //     </svg>
+    //   ),
+    // },
     {
       label: 'Instagram',
       href: '#',
@@ -99,10 +100,10 @@ export default function Footer() {
 
           {/* Brand Column */}
           <div className="lg:col-span-1 flex flex-col gap-5">
-            <a href="#" className="flex items-center gap-1 font-extrabold text-2xl tracking-tight">
+            <Link to="/" className="flex items-center gap-1 font-extrabold text-2xl tracking-tight">
               <span className="text-white">CK</span>
               <span className="text-white/50 font-light">MOTORS</span>
-            </a>
+            </Link>
             <p className="text-sm text-white/55 leading-relaxed">
               Authorized Tata Motors showroom bringing you the best dealership experience. Elevate your driving journey with style, luxury, and safety.
             </p>
@@ -183,8 +184,8 @@ export default function Footer() {
             © {new Date().getFullYear()} CK Motors. All Rights Reserved. All logos and trademarks are property of Tata Motors Ltd.
           </p>
           <div className="flex items-center gap-5">
-            <a href="#" className="text-xs text-white/40 hover:text-white/70 transition-colors">Privacy Policy</a>
-            <a href="#" className="text-xs text-white/40 hover:text-white/70 transition-colors">Terms &amp; Conditions</a>
+            <Link to="/privacy-policy" className="text-xs text-white/40 hover:text-white/70 transition-colors">Privacy Policy</Link>
+            <Link to="/terms-and-conditions" className="text-xs text-white/40 hover:text-white/70 transition-colors">Terms &amp; Conditions</Link>
           </div>
         </div>
       </div>
