@@ -1,0 +1,64 @@
+@import "tailwindcss";
+
+@theme {
+  /* Brand color definitions */
+  --color-tata-blue: #0d3388;
+  --color-tata-navy: #0b2e86;
+  --color-tata-bg: #f8fafc;
+  --color-tata-card: #ffffff;
+  --color-whatsapp-green: #22c55e;
+  --color-whatsapp-hover: #16a34a;
+  
+  /* Font Family definitions */
+  --font-heading: 'Outfit', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  
+  /* Animation definitions mapped to Tailwind classes */
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-pulse-glow: pulse-glow 2s infinite;
+}
+
+/* Custom Keyframes for Animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 15px rgba(13, 51, 136, 0.1); }
+  50% { box-shadow: 0 0 25px rgba(13, 51, 136, 0.3); }
+}
+
+/* Global Styles & Scrollbar Utilities */
+body {
+  background-color: var(--color-tata-bg);
+  color: #0f172a;
+  font-family: var(--font-body);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Utility layout wrapper */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
