@@ -59,13 +59,11 @@ export default function ContactSection() {
         </div>
 
         {/* Main Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
 
-          {/* Left Column */}
-          <div className="flex flex-col gap-6">
-
-            {/* Info Card */}
-            <div className="bg-white rounded-2xl border border-slate-200 shadow-sm p-6">
+          {/* Info Card */}
+          <div className="w-full">
+            <div className="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 h-full">
               <h3 className="text-lg font-bold text-tata-navy mb-5">CK Motors Dealership</h3>
               <div className="flex flex-col gap-5">
                 {INFO_ITEMS.map((item, i) => (
@@ -100,9 +98,38 @@ export default function ContactSection() {
                 </div> */}
               </div>
             </div>
+          </div>
 
-            {/* Contact Form */}
-            <div className="bg-white rounded-2xl border border-slate-200 shadow-sm p-6">
+          {/* Right Column: Google Map */}
+          <div className="rounded-2xl overflow-hidden border border-slate-200 shadow-sm h-full min-h-[500px] w-full">
+            <div className="relative h-full min-h-[500px]">
+              <iframe
+                src="https://maps.google.com/maps?q=24.899221,74.623356&z=17&output=embed&iwloc=near"
+                width="100%"
+                height="100%"
+                style={{ border: 0, display: 'block', minHeight: '500px' }}
+                allowFullScreen=""
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="CK Motors Tata Showroom – Chittorgarh"
+              />
+              <div className="absolute top-4 left-4 right-4 flex flex-col sm:flex-row sm:justify-end gap-3">
+                <a
+                  href={directionsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 px-4 py-3 rounded-full bg-tata-blue text-white text-sm font-semibold shadow-lg shadow-slate-900/10 hover:bg-tata-navy transition"
+                >
+                  Get Directions
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        {/* Contact Form */}
+        <div className="bg-white rounded-2xl border border-slate-200 shadow-sm p-6">
               <h3 className="text-lg font-bold text-tata-navy mb-5">Send a Direct Message</h3>
               {!submitted ? (
                 <form onSubmit={handleSubmit} className="flex flex-col gap-4">
@@ -188,35 +215,6 @@ export default function ContactSection() {
                 </div>
               )}
             </div>
-          </div>
-
-          {/* Right Column: Google Map */}
-          <div className="rounded-2xl overflow-hidden border border-slate-200 shadow-sm h-full min-h-[500px]">
-            <div className="relative h-full min-h-[500px]">
-              <iframe
-                src="https://maps.google.com/maps?q=24.899221,74.623356&z=17&output=embed&iwloc=near"
-                width="100%"
-                height="100%"
-                style={{ border: 0, display: 'block', minHeight: '500px' }}
-                allowFullScreen=""
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                title="CK Motors Tata Showroom – Chittorgarh"
-              />
-              <div className="absolute bottom-4 left-4 right-4 flex flex-col sm:flex-row sm:justify-end gap-3">
-                <a
-                  href={directionsUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 px-4 py-3 rounded-full bg-tata-blue text-white text-sm font-semibold shadow-lg shadow-slate-900/10 hover:bg-tata-navy transition"
-                >
-                  Get Directions
-                </a>
-              </div>
-            </div>
-          </div>
-
-        </div>
       </div>
     </section>
   );
