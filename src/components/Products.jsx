@@ -104,124 +104,88 @@ export default function Products({ onOpenInquiry }) {
 
         {/* Filter Tabs */}
         <div className="flex justify-center flex-wrap gap-3 mb-12">
-          <button
-            className={`px-6 py-2.5 rounded-full text-sm font-semibold cursor-pointer transition-all duration-300 border ${activeCategory === 'all'
-              ? 'bg-tata-blue text-white border-tata-blue shadow-lg shadow-tata-blue/20'
-              : 'bg-white border-slate-200 text-slate-500 hover:bg-slate-50 hover:text-slate-900 hover:border-slate-400'
-              }`}
-            onClick={() => setActiveCategory('all')}
-          >
-            All Vehicles
-          </button>
-          <button
-            className={`px-6 py-2.5 rounded-full text-sm font-semibold cursor-pointer transition-all duration-300 border ${activeCategory === 'suv'
-              ? 'bg-tata-blue text-white border-tata-blue shadow-lg shadow-tata-blue/20'
-              : 'bg-white border-slate-200 text-slate-500 hover:bg-slate-50 hover:text-slate-900 hover:border-slate-400'
-              }`}
-            onClick={() => setActiveCategory('mini-truck')}
-          >
-            Mini Trucks
-          </button>
-          <button
-            className={`px-6 py-2.5 rounded-full text-sm font-semibold cursor-pointer transition-all duration-300 border ${activeCategory === 'ev'
-              ? 'bg-tata-blue text-white border-tata-blue shadow-lg shadow-tata-blue/20'
-              : 'bg-white border-slate-200 text-slate-500 hover:bg-slate-50 hover:text-slate-900 hover:border-slate-400'
-              }`}
-            onClick={() => setActiveCategory('ev')}
-          >
-            EV Range ⚡
-          </button>
-          {/* <button
-            className={`px-6 py-2.5 rounded-full text-sm font-semibold cursor-pointer transition-all duration-300 border ${activeCategory === 'hatchback'
-              ? 'bg-tata-blue text-white border-tata-blue shadow-lg shadow-tata-blue/20'
-              : 'bg-white border-slate-200 text-slate-500 hover:bg-slate-50 hover:text-slate-900 hover:border-slate-400'
-              }`}
-            onClick={() => setActiveCategory('hatchback')}
-          >
-            Hatchbacks
-          </button> */}
+          {[
+            { key: 'all', label: 'All Vehicles' },
+            { key: 'mini-truck', label: 'Mini Trucks' },
+            { key: 'ev', label: 'EV Range ⚡' }
+          ].map((tab) => (
+            <button
+              key={tab.key}
+              className={`px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 border ${activeCategory === tab.key
+                ? 'bg-tata-blue text-white border-tata-blue shadow-lg shadow-tata-blue/20'
+                : 'bg-white border-slate-200 text-slate-500 hover:bg-slate-50 hover:text-slate-900 hover:border-slate-400'
+                }`}
+              onClick={() => setActiveCategory(tab.key)}
+            >
+              {tab.label}
+            </button>
+          ))}
         </div>
 
         {/* Cars Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {filteredCars.map((car, index) => (
             <div
               key={car.id}
-              className={`group bg-white border border-slate-200 rounded-xl overflow-hidden flex flex-col transition-all duration-300 hover:-translate-y-2 hover:shadow-xl ${car.category === 'ev' ? 'hover:border-whatsapp-green/40' : 'hover:border-tata-blue/35'
-                }`}
-              style={{ animationDelay: `${index * 0.1}s` }}
+              className={`group overflow-hidden rounded-[28px] border border-slate-200 bg-white transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_60px_rgba(15,23,42,0.08)] ${car.category === 'ev' ? 'hover:border-whatsapp-green/30' : 'hover:border-tata-blue/25'}`}
             >
-              <div className="relative p-8 pb-3 bg-gradient-to-b from-tata-blue/[0.01] to-transparent flex items-center justify-center min-h-[200px]">
-                <img src={car.image} alt={car.name} className="max-w-[90%] h-auto object-contain drop-shadow-[0_8px_16px_rgba(13,51,136,0.12)] transition-transform duration-300 group-hover:scale-104" />
-                <span className={`absolute top-4 right-4 text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow-sm border ${car.category === 'ev'
-                  ? 'bg-whatsapp-green text-white border-whatsapp-green'
-                  : 'bg-slate-600 text-white border-slate-600'
-                  }`}>
-                  {car.type}
+              <div className="relative overflow-hidden bg-slate-100">
+                <img
+                  src={car.image}
+                  alt={car.name}
+                  className="h-[280px] w-full object-cover transition duration-500 group-hover:scale-105"
+                />
+                <span className={`absolute top-4 right-4 inline-flex items-center rounded-full px-3 py-1 text-[11px] font-bold uppercase tracking-[0.18em] ${car.category === 'ev' ? 'bg-whatsapp-green text-white' : 'bg-slate-950 text-white'}`}>
+                  {car.type === 'Electric Mini Truck' ? 'EV' : car.category === 'mini-truck' ? 'Mini Truck' : 'Model'}
                 </span>
               </div>
 
-              <div className="p-6 border-t border-slate-100 flex-grow flex flex-col">
-                <div className="flex justify-between items-start mb-4 gap-2">
+              <div className="p-6">
+                <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3">
                   <div>
-                    <h3 className="text-xl font-extrabold text-tata-navy mb-0.5">{car.name}</h3>
-                    <p className="text-xs text-slate-500">{car.tagline}</p>
+                    <h3 className="text-2xl font-extrabold text-slate-900 tracking-tight">{car.name}</h3>
+                    <p className="mt-2 text-sm text-slate-500">{car.tagline}</p>
                   </div>
-                  <div className="text-right">
-                    <span className="block text-[9px] text-slate-400 uppercase tracking-widest">Ex-Showroom</span>
-                    <span className="text-base font-extrabold text-tata-navy">{car.price}</span>
-                  </div>
-                </div>
-
-                {/* <div className="inline-flex items-center gap-1.5 text-xs bg-slate-50 border border-slate-100 px-3 py-1.5 rounded text-slate-500 mb-5 w-fit font-medium">
-                  <Shield size={14} className="text-whatsapp-green" />
-                  <span>Safety: <strong>{car.safety}</strong></span>
-                </div> */}
-
-                <div className="grid grid-cols-2 gap-3 mb-5">
-                  <div className="bg-slate-50 border border-slate-100 p-2.5 px-3 rounded flex items-center gap-2.5 min-w-0">
-                    <Zap size={14} className={`flex-shrink-0 ${car.category === 'ev' ? 'text-whatsapp-green' : 'text-slate-400'}`} />
-                    <div className="min-w-0 flex-1">
-                      <span className="block text-[8px] text-slate-400 uppercase font-bold truncate w-full">Engine/Battery</span>
-                      <span className="block text-xs font-bold text-slate-800 w-full" title={car.engine}>{car.engine}</span>
-                    </div>
-                  </div>
-                  <div className="bg-slate-50 border border-slate-100 p-2.5 px-3 rounded flex items-center gap-2.5 min-w-0">
-                    <Gauge size={14} className={`flex-shrink-0 ${car.category === 'ev' ? 'text-whatsapp-green' : 'text-slate-400'}`} />
-                    <div className="min-w-0 flex-1">
-                      <span className="block text-[8px] text-slate-400 uppercase font-bold truncate w-full">Power Output</span>
-                      <span className="block text-xs font-bold text-slate-800 w-full" title={car.power}>{car.power}</span>
-                    </div>
-                  </div>
-                  <div className="bg-slate-50 border border-slate-100 p-2.5 px-3 rounded flex items-center gap-2.5 min-w-0">
-                    <Users size={14} className={`flex-shrink-0 ${car.category === 'ev' ? 'text-whatsapp-green' : 'text-slate-400'}`} />
-                    <div className="min-w-0 flex-1">
-                      <span className="block text-[8px] text-slate-400 uppercase font-bold truncate w-full">Seating</span>
-                      <span className="block text-xs font-bold text-slate-800 truncate w-full" title={car.seating}>{car.seating}</span>
-                    </div>
-                  </div>
-                  <div className="bg-slate-50 border border-slate-100 p-2.5 px-3 rounded flex items-center gap-2.5 min-w-0">
-                    <Info size={14} className={`flex-shrink-0 ${car.category === 'ev' ? 'text-whatsapp-green' : 'text-slate-400'}`} />
-                    <div className="min-w-0 flex-1">
-                      <span className="block text-[8px] text-slate-400 uppercase font-bold truncate w-full">Fuel Options</span>
-                      <span className="block text-xs font-bold text-slate-800 w-full" title={car.fuel}>{car.fuel}</span>
-                    </div>
+                  <div className="rounded-3xl border border-slate-200 bg-slate-50 p-3 text-right">
+                    <p className="text-[10px] uppercase tracking-[0.24em] text-slate-500">Ex-Showroom</p>
+                    <p className="mt-2 text-lg font-extrabold text-slate-900">{car.price}</p>
                   </div>
                 </div>
 
-                <div className="mt-auto border-t border-slate-100 pt-4 mb-5">
-                  <span className="text-[10px] font-bold text-slate-400 uppercase mb-2 block tracking-wider">Highlights:</span>
-                  <ul className="list-none text-xs text-slate-500 grid grid-cols-1 gap-1">
+                <div className="mt-6 grid gap-3 sm:grid-cols-2">
+                  <div className="rounded-3xl border border-slate-200 bg-slate-50 p-4 text-sm text-slate-600">
+                    <p className="text-[10px] uppercase tracking-[0.24em] text-slate-400">Engine / Battery</p>
+                    <p className="mt-2 font-semibold text-slate-900">{car.engine}</p>
+                  </div>
+                  <div className="rounded-3xl border border-slate-200 bg-slate-50 p-4 text-sm text-slate-600">
+                    <p className="text-[10px] uppercase tracking-[0.24em] text-slate-400">Power Output</p>
+                    <p className="mt-2 font-semibold text-slate-900">{car.power}</p>
+                  </div>
+                  <div className="rounded-3xl border border-slate-200 bg-slate-50 p-4 text-sm text-slate-600">
+                    <p className="text-[10px] uppercase tracking-[0.24em] text-slate-400">Seating</p>
+                    <p className="mt-2 font-semibold text-slate-900">{car.seating}</p>
+                  </div>
+                  <div className="rounded-3xl border border-slate-200 bg-slate-50 p-4 text-sm text-slate-600">
+                    <p className="text-[10px] uppercase tracking-[0.24em] text-slate-400">Fuel Options</p>
+                    <p className="mt-2 font-semibold text-slate-900">{car.fuel}</p>
+                  </div>
+                </div>
+
+                <div className="mt-6 border-t border-slate-200 pt-5">
+                  <p className="text-[10px] uppercase tracking-[0.24em] text-slate-400">Highlights</p>
+                  <ul className="mt-3 space-y-2 text-sm text-slate-600">
                     {car.keySpecs.map((spec, i) => (
-                      <li key={i} className={`flex items-start before:content-['•'] before:mr-2 before:font-bold ${car.category === 'ev' ? 'before:text-whatsapp-green' : 'before:text-tata-blue'
-                        }`}>{spec}</li>
+                      <li key={i} className="flex items-start gap-2">
+                        <span className={`mt-1 inline-flex h-2.5 w-2.5 rounded-full ${car.category === 'ev' ? 'bg-whatsapp-green' : 'bg-tata-blue'}`} />
+                        <span>{spec}</span>
+                      </li>
                     ))}
                   </ul>
                 </div>
 
-                <div className="grid grid-cols-2 gap-3 mt-2">
+                <div className="mt-6 grid grid-cols-2 gap-3">
                   <button
-                    className="inline-flex items-center justify-center px-4 py-2.5 font-semibold text-xs border border-tata-blue text-tata-blue rounded hover:bg-tata-blue/5 transition-all duration-300 cursor-pointer"
+                    className="rounded-full border border-slate-200 bg-white px-4 py-3 text-sm font-semibold text-slate-700 transition hover:border-slate-300 hover:bg-slate-50"
                     onClick={() => {
                       const detailsSection = document.getElementById('contact');
                       if (detailsSection) {
@@ -232,7 +196,7 @@ export default function Products({ onOpenInquiry }) {
                     View Showroom
                   </button>
                   <button
-                    className="inline-flex items-center justify-center px-4 py-2.5 font-bold text-xs bg-tata-blue text-white rounded hover:bg-tata-navy transition-all duration-300 cursor-pointer shadow hover:shadow-tata-blue/15"
+                    className="rounded-full bg-tata-blue px-4 py-3 text-sm font-bold text-white transition hover:bg-[#0b2e86]"
                     onClick={() => onOpenInquiry(car.name)}
                   >
                     Enquire Now
