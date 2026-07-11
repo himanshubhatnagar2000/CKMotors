@@ -11,10 +11,10 @@ export default function ContactSection() {
     setTimeout(() => {
       setFormState({ name: '', email: '', subject: '', message: '' });
       setSubmitted(false);
-    }, 4000);
+    }, 8000);
   };
 
-  const directionsUrl = 'https://www.google.com/maps/dir/?api=1&destination=24.899221,74.623356';
+  const directionsUrl = 'https://www.google.com/maps/dir//No+10%2FA,+Tata+Motors+Commercial+Vehicle+Dealer+-+C+K+Motors,+Old+Industrial+Area,+Chittorgarh,+Rajasthan+312001/@24.8992082,74.6207115,17z/data=!4m16!1m7!3m6!1s0x3968a04c6e6b9b67:0x3342f78fdd54f17a!2sTata+Motors+Commercial+Vehicle+Dealer+-+C+K+Motors!8m2!3d24.8992082!4d74.6232864!16s%2Fg%2F11btsvfflf!4m7!1m0!1m5!1m1!1s0x3968a04c6e6b9b67:0x3342f78fdd54f17a!2m2!1d74.6232864!2d24.8992082?entry=ttu&g_ep=EgoyMDI2MDcwOC4wIKXMDSoASAFQAw%3D%3D';
 
   const INFO_ITEMS = [
     {
@@ -104,7 +104,7 @@ export default function ContactSection() {
           <div className="rounded-2xl overflow-hidden border border-slate-200 shadow-sm h-full min-h-[500px] w-full">
             <div className="relative h-full min-h-[500px]">
               <iframe
-                src="https://maps.google.com/maps?q=24.899221,74.623356&z=17&output=embed&iwloc=near"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3618.9640400362377!2d74.6232864!3d24.899208200000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3968a04c6e6b9b67%3A0x3342f78fdd54f17a!2sTata%20Motors%20Commercial%20Vehicle%20Dealer%20-%20C%20K%20Motors!5e0!3m2!1sen!2sin!4v1783766757771!5m2!1sen!2sin"
                 width="100%"
                 height="100%"
                 style={{ border: 0, display: 'block', minHeight: '500px' }}
@@ -113,7 +113,7 @@ export default function ContactSection() {
                 referrerPolicy="no-referrer-when-downgrade"
                 title="CK Motors Tata Showroom – Chittorgarh"
               />
-              <div className="absolute top-4 left-4 right-4 flex flex-col sm:flex-row sm:justify-end gap-3">
+              {/* <div className="absolute top-4 left-4 right-4 flex flex-col sm:flex-row sm:justify-end gap-3">
                 <a
                   href={directionsUrl}
                   target="_blank"
@@ -122,7 +122,7 @@ export default function ContactSection() {
                 >
                   Get Directions
                 </a>
-              </div>
+              </div> */}
             </div>
           </div>
 

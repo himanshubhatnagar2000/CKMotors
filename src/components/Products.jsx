@@ -146,7 +146,7 @@ export default function Products({ onOpenInquiry }) {
                     <h3 className="text-2xl font-extrabold text-slate-900 tracking-tight">{car.name}</h3>
                     <p className="mt-2 text-sm text-slate-500">{car.tagline}</p>
                   </div>
-                  <div className="rounded-3xl border border-slate-200 bg-slate-50 p-3 text-right">
+                  <div className="rounded-3xl border border-slate-200 bg-slate-50 p-3 text-left">
                     <p className="text-[10px] uppercase tracking-[0.24em] text-slate-500">Ex-Showroom</p>
                     <p className="mt-2 text-lg font-extrabold text-slate-900">{car.price}</p>
                   </div>
