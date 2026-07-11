@@ -191,7 +191,7 @@ export default function ContactSection() {
           {/* Right Column: Google Map */}
           <div className="rounded-2xl overflow-hidden border border-slate-200 shadow-sm h-full min-h-[500px]">
             <iframe
-              src="https://maps.google.com/maps?q=24.899221,74.623356&z=17&output=embed&iwloc=near"
+              src="https://maps.google.com/maps?q=24.899221,74.623256&z=17&output=embed&iwloc=near"
               width="100%"
               height="100%"
               style={{ border: 0, display: 'block', minHeight: '500px' }}
