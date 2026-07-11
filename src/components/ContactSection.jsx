@@ -14,6 +14,8 @@ export default function ContactSection() {
     }, 4000);
   };
 
+  const directionsUrl = 'https://www.google.com/maps/dir/?api=1&destination=24.899221,74.623356';
+
   const INFO_ITEMS = [
     {
       icon: <MapPin size={18} />,
@@ -190,16 +192,28 @@ export default function ContactSection() {
 
           {/* Right Column: Google Map */}
           <div className="rounded-2xl overflow-hidden border border-slate-200 shadow-sm h-full min-h-[500px]">
-            <iframe
-              src="https://maps.google.com/maps?q=24.899221,74.623356&z=17&output=embed&iwloc=near"
-              width="100%"
-              height="100%"
-              style={{ border: 0, display: 'block', minHeight: '500px' }}
-              allowFullScreen=""
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              title="CK Motors Tata Showroom – Chittorgarh"
-            />
+            <div className="relative h-full min-h-[500px]">
+              <iframe
+                src="https://maps.google.com/maps?q=24.899221,74.623356&z=17&output=embed&iwloc=near"
+                width="100%"
+                height="100%"
+                style={{ border: 0, display: 'block', minHeight: '500px' }}
+                allowFullScreen=""
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="CK Motors Tata Showroom – Chittorgarh"
+              />
+              <div className="absolute bottom-4 left-4 right-4 flex flex-col sm:flex-row sm:justify-end gap-3">
+                <a
+                  href={directionsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 px-4 py-3 rounded-full bg-tata-blue text-white text-sm font-semibold shadow-lg shadow-slate-900/10 hover:bg-tata-navy transition"
+                >
+                  Get Directions
+                </a>
+              </div>
+            </div>
           </div>
 
         </div>
