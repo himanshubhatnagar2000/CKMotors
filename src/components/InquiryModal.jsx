@@ -2,11 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { X, CheckCircle2, Calendar, Phone, Sparkles } from 'lucide-react';
 
 const AVAILABLE_MODELS = [
-  'Tata Safari',
-  'Tata Curvv',
-  'Tata Nexon EV',
-  'Tata Punch',
-  'Tata Altroz',
+  'ACE PRO EV',
+  'ACE PRO PETROL',
+  'ACE PRO BIFUEL',
+  'TATA ACE GOLD PETROL',
+  'TATA ACE GOLD CNG 2.0',
   'General Enquiry'
 ];
 
