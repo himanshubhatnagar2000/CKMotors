@@ -209,7 +209,7 @@ export default function ContactSection() {
                   <div>
                     <h4 className="font-bold text-emerald-800 mb-1">Message Dispatched!</h4>
                     <p className="text-sm text-emerald-700 leading-relaxed">
-                      We've received your message. Our showroom executive will email you back shortly.
+                      We've received your message. Our showroom executive will call or email you back in 1-2 business days.
                     </p>
                   </div>
                 </div>

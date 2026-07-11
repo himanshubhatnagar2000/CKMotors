@@ -71,7 +71,7 @@ export default function InquiryModal({ isOpen, onClose, preselectedCar }) {
               </span>
               <h2 className="text-2xl md:text-3xl font-extrabold text-tata-navy mb-2">Schedule / Enquire</h2>
               <p className="text-sm text-slate-500">
-                Fill in the details below. A CK Motors advisor will contact you within 24 hours to confirm your schedule.
+                Fill in the details below. A CK Motors advisor will contact you within 1-2 business days to confirm your schedule.
               </p>
             </div>
 
