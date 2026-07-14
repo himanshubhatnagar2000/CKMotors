@@ -111,7 +111,7 @@ export default function Products({ onOpenInquiry }) {
           ].map((tab) => (
             <button
               key={tab.key}
-              className={`px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 border ${activeCategory === tab.key
+              className={`px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 border cursor-pointer ${activeCategory === tab.key
                 ? 'bg-tata-blue text-white border-tata-blue shadow-lg shadow-tata-blue/20'
                 : 'bg-white border-slate-200 text-slate-500 hover:bg-slate-50 hover:text-slate-900 hover:border-slate-400'
                 }`}
@@ -185,7 +185,7 @@ export default function Products({ onOpenInquiry }) {
 
                 <div className="mt-6 grid grid-cols-2 gap-3">
                   <button
-                    className="rounded-full border border-slate-200 bg-white px-4 py-3 text-sm font-semibold text-slate-700 transition hover:border-slate-300 hover:bg-slate-50"
+                    className="rounded-full cursor-pointer border border-slate-200 bg-white px-4 py-3 text-sm font-semibold text-slate-700 transition hover:border-slate-300 hover:bg-slate-50"
                     onClick={() => {
                       const detailsSection = document.getElementById('contact');
                       if (detailsSection) {
@@ -196,7 +196,7 @@ export default function Products({ onOpenInquiry }) {
                     View Showroom
                   </button>
                   <button
-                    className="rounded-full bg-tata-blue px-4 py-3 text-sm font-bold text-white transition hover:bg-[#0b2e86]"
+                    className="rounded-full cursor-pointer bg-tata-blue px-4 py-3 text-sm font-bold text-white transition hover:bg-[#0b2e86]"
                     onClick={() => onOpenInquiry(car.name)}
                   >
                     Enquire Now
