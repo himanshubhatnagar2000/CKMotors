@@ -3,6 +3,7 @@ import { useLocation } from 'react-router-dom';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import Products from './components/Products';
+import EmiCalculator from './components/EmiCalculator';
 import ContactSection from './components/ContactSection';
 import Footer from './components/Footer';
 import InquiryModal from './components/InquiryModal';
@@ -15,14 +16,13 @@ function App() {
   const location = useLocation();
 
   useEffect(() => {
-    document.title = 'CK Motors – Authorized TATA Motors Dealer';
+    document.title = 'CK Motors – Authorized TATA Motors Commercial Dealer';
   }, []);
 
   // Scroll to the section matching the URL hash when navigating from another page
   useEffect(() => {
     if (location.hash) {
       const id = location.hash.replace('#', '');
-      // Slight delay lets the page render before scrolling
       setTimeout(() => {
         const el = document.getElementById(id);
         if (el) el.scrollIntoView({ behavior: 'smooth' });
@@ -46,12 +46,15 @@ function App() {
       <Header onOpenInquiry={() => openInquiry('General Enquiry')} />
 
       {/* Main Page Sections */}
-      <main>
+      <main className="pt-8">
         {/* Immersive Hero Section */}
         <Hero onOpenInquiry={openInquiry} />
 
-        {/* Dynamic Products Catalog */}
-        <Products onOpenInquiry={openInquiry} />
+        {/* Featured Vehicles Preview */}
+        <Products onOpenInquiry={openInquiry} isTeaser={true} />
+
+        {/* Showroom Interactive EMI Calculator */}
+        <EmiCalculator onOpenInquiry={openInquiry} />
 
         {/* Why Choose CK Motors (About Section) */}
         <section id="about" className="py-20 bg-white">
@@ -64,7 +67,7 @@ function App() {
               </span>
               <h2 className="text-3xl md:text-4xl font-extrabold text-tata-navy mb-4">The CK Motors Experience</h2>
               <p className="text-slate-500 max-w-xl mx-auto text-sm leading-relaxed">
-                We believe buying a car should be as exciting as driving it. That's why we support you at every milestone with personalized, hassle-free service.
+                We believe buying a commercial vehicle should be hassle-free. That's why we support you at every milestone with personalized, showroom-grade service.
               </p>
             </div>
 
@@ -77,7 +80,7 @@ function App() {
                 </div>
                 <h3 className="text-base font-bold text-tata-navy">Doorstep Test Drives</h3>
                 <p className="text-sm text-slate-500 leading-relaxed">
-                  Short on time? Choose your preferred Tata car and we will bring it right to your home or office for a comprehensive test drive experience.
+                  Short on time? Choose your preferred Tata commercial vehicle and we will bring it right to your office or hub for a test drive.
                 </p>
               </div>
 
@@ -87,7 +90,7 @@ function App() {
                 </div>
                 <h3 className="text-base font-bold text-tata-navy">Instant EMI &amp; Finance</h3>
                 <p className="text-sm text-slate-500 leading-relaxed">
-                  Partnered with India's top public and private banks to secure low interest rates, instant approvals, and flexible financing structures.
+                  Partnered with top public and private banks to secure low interest rates, instant approvals, and flexible financing structures.
                 </p>
               </div>
 
@@ -97,7 +100,7 @@ function App() {
                 </div>
                 <h3 className="text-base font-bold text-tata-navy">40-Bay Service Hub</h3>
                 <p className="text-sm text-slate-500 leading-relaxed">
-                  Our advanced workshop features cutting-edge Tata diagnostics, a high-volume collision repair bay, and a complete inventory of genuine spare parts.
+                  Our advanced workshop features cutting-edge Tata diagnostics, high-volume collision repair, and genuine spare parts.
                 </p>
               </div>
 
@@ -107,7 +110,7 @@ function App() {
                 </div>
                 <h3 className="text-base font-bold text-tata-navy">100% Exchange Bonus</h3>
                 <p className="text-sm text-slate-500 leading-relaxed">
-                  Upgrade your old car easily. We offer transparent digital evaluations at the showroom and guarantee maximum value and exchange bonuses.
+                  Upgrade your old commercial vehicle easily. We offer transparent digital evaluations at the showroom and guarantee maximum value.
                 </p>
               </div>
 
@@ -123,10 +126,10 @@ function App() {
       <Footer />
 
       {/* Booking / Lead Generation Popup Modal */}
-      <InquiryModal 
-        isOpen={isInquiryOpen} 
-        onClose={closeInquiry} 
-        preselectedCar={selectedCar} 
+      <InquiryModal
+        isOpen={isInquiryOpen}
+        onClose={closeInquiry}
+        preselectedCar={selectedCar}
       />
     </>
   );

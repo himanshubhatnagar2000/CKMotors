@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { ArrowRight, ShieldCheck, Sparkles, Award } from 'lucide-react';
 import HERO from "../assets/hero.jpg"
 
@@ -29,12 +30,12 @@ export default function Hero({ onOpenInquiry }) {
               <span>Book a Test Drive</span>
               <ArrowRight size={18} />
             </button>
-            <a
-              href="#products"
+            <Link
+              to="/products"
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-md font-bold text-base border border-tata-blue text-tata-blue hover:bg-tata-blue/5 transition-all duration-300 hover:-translate-y-0.5"
             >
               Explore Models
-            </a>
+            </Link>
           </div>
 
           <div className="flex gap-8 border-t border-slate-200 pt-8 w-full">

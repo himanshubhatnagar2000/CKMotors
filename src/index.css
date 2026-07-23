@@ -8,11 +8,11 @@
   --color-tata-card: #ffffff;
   --color-whatsapp-green: #22c55e;
   --color-whatsapp-hover: #16a34a;
-  
+
   /* Font Family definitions */
   --font-heading: 'Outfit', sans-serif;
   --font-body: 'Inter', sans-serif;
-  
+
   /* Animation definitions mapped to Tailwind classes */
   --animate-float: float 6s ease-in-out infinite;
   --animate-pulse-glow: pulse-glow 2s infinite;
@@ -20,13 +20,27 @@
 
 /* Custom Keyframes for Animations */
 @keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-12px); }
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-12px);
+  }
 }
 
 @keyframes pulse-glow {
-  0%, 100% { box-shadow: 0 0 15px rgba(13, 51, 136, 0.1); }
-  50% { box-shadow: 0 0 25px rgba(13, 51, 136, 0.3); }
+
+  0%,
+  100% {
+    box-shadow: 0 0 15px rgba(13, 51, 136, 0.1);
+  }
+
+  50% {
+    box-shadow: 0 0 25px rgba(13, 51, 136, 0.3);
+  }
 }
 
 /* Global Styles & Scrollbar Utilities */
@@ -44,13 +58,16 @@ body {
 ::-webkit-scrollbar {
   width: 8px;
 }
+
 ::-webkit-scrollbar-track {
   background: #f1f5f9;
 }
+
 ::-webkit-scrollbar-thumb {
   background: #cbd5e1;
   border-radius: 4px;
 }
+
 ::-webkit-scrollbar-thumb:hover {
   background: #94a3b8;
 }
@@ -61,4 +78,43 @@ body {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 24px;
+}
+
+/* Suppress Google Translate default banner & top offset */
+.goog-te-banner-frame,
+iframe.goog-te-banner-frame,
+iframe[id*=":1.container"],
+iframe[src*="translate.google.com"],
+.VIpgJd-yD0eb-LgAxNu-wT1Twb,
+.goog-te-balloon-frame,
+#goog-gt-tt,
+.goog-te-spinner-pos,
+.goog-tooltip,
+.goog-tooltip:hover {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  height: 0 !important;
+  width: 0 !important;
+  pointer-events: none !important;
+}
+
+body {
+  top: 0px !important;
+  position: static !important;
+  min-height: 100% !important;
+}
+
+.goog-text-highlight {
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+
+.goog-te-gadget,
+.goog-te-combo {
+  display: none !important;
+}
+
+.skiptranslate {
+  display: none;
 }
