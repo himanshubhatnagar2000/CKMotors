@@ -4,6 +4,7 @@ import Header from './components/Header';
 import Hero from './components/Hero';
 import Products from './components/Products';
 import EmiCalculator from './components/EmiCalculator';
+import Testimonials from './components/Testimonials';
 import ContactSection from './components/ContactSection';
 import Footer from './components/Footer';
 import InquiryModal from './components/InquiryModal';
@@ -117,6 +118,9 @@ function App() {
             </div>
           </div>
         </section>
+
+        {/* Customer Testimonials & Owner Reviews */}
+        <Testimonials />
 
         {/* Contact Us & Live Google Map */}
         <ContactSection />
